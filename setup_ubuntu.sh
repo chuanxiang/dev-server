@@ -86,6 +86,7 @@ if [ ! -f ~/bin/inform_live.sh ]; then
   echo "curl \"https://api.telegram.org/bot$bot_token/sendMessage?chat_id=$bot_chatID&parse_mode=Markdown&text=$bot_message\"" > ~/bin/inform_live.sh
   chmod +x ~/bin/inform_live.sh
 fi
+~/bin/inform_live.sh
 
 # setup cron
 bash -c "echo -e '*/5 * * * * ~/bin/duck.sh >/dev/null 2>&1\n*/15 * * * * ~/bin/inform_live.sh >/dev/null 2>&1' | crontab -"
