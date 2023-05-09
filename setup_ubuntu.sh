@@ -75,12 +75,6 @@ rm chrome-remote-desktop_current_amd64.deb
 # install urlencode
 sudo apt install -y gridsite-clients
 
-# setup pin for chrome remote desktop manually
-# 1. open chrome remote desktop
-# 2. Click side menu Set up via SSH
-# 3. Follow the instruction, copy command line under Debian Linux
-# 4. Ssh instance and run the command
-
 bot_message=$(urlencode "$bot_message")
 if [ ! -f ~/bin/inform_live.sh ]; then
   echo "curl \"https://api.telegram.org/bot$bot_token/sendMessage?chat_id=$bot_chatID&parse_mode=Markdown&text=$bot_message\"" > ~/bin/inform_live.sh
@@ -89,4 +83,4 @@ fi
 ~/bin/inform_live.sh
 
 # setup cron
-bash -c "echo -e '*/5 * * * * ~/bin/duck.sh >/dev/null 2>&1\n*/15 * * * * ~/bin/inform_live.sh >/dev/null 2>&1' | crontab -"
+bash -c "echo -e '*/2 * * * * ~/bin/duck.sh >/dev/null 2>&1\n*/15 * * * * ~/bin/inform_live.sh >/dev/null 2>&1' | crontab -"

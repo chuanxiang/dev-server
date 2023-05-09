@@ -25,6 +25,14 @@ Check features list for more information about this server.
 1. Install terraform and setup AWS key in your local pc if it is not done yet
 2. Create a EBS volume in your AZ, launch an instace to use this EBS and label it by e2label
 3. Clone this code
-4. Change values in terrafrom.tfvars, and vars in setup_ubuntu.sh
+4. Change values in terraform.tfvars, and vars in setup_ubuntu.sh
 5. Execute terraform init, plan, apply
-6. Setup Chrome Remote Desktop pin manually (Check setup_ubuntu.sh)
+6. Setup Chrome Remote Desktop pin manually (see below)
+
+
+## Setup pin for chrome remote desktop manually
+1. open chrome remote desktop in local PC
+2. Click side menu Set up via SSH
+3. Follow the instruction, copy command line under Debian Linux
+4. Ssh EC2 instance and run the command
+
